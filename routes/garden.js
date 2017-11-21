@@ -11,7 +11,7 @@ const router = Express.Router();
 router.get("/", (req, res) => {
   res.render("garden", {
     goodEvil: req.cookies.goodevil,
-    backgroundClass: req.cookies.goodevil,
+    backgroundClass: req.cookies.goodevil
   });
 });
 
@@ -20,32 +20,33 @@ router.get("/responses", (req, res) => {
   if (req.cookies.goodevil === "good") {
     job1 = "Angel";
     job2 = "Luke Skywalker";
-    image = "/images/luke.jpg"
+    image = "/images/luke.jpg";
   } else if (req.cookies.goodevil === "evil") {
     job1 = "Devil";
     job2 = "Darth Vader";
-    image = "/images/darth.jpeg"
+    image = "/images/darth.jpeg";
   }
 
   let insanityimage;
-  switch(req.cookies.insanity){
+  let insanityLevel = Number(req.cookies.insanity);
+  switch (insanityLevel) {
     case 1:
-      insanityimage = '/images/1.png';
+      insanityimage = "/images/1.png";
       break;
     case 2:
-      insanityimage = '/images/2.png';
+      insanityimage = "/images/2.png";
       break;
     case 3:
-      insanityimage = '/images/3.png';
+      insanityimage = "/images/3.png";
       break;
     case 4:
-      insanityimage = '/images/4.png';
+      insanityimage = "/images/4.png";
       break;
     case 5:
-      insanityimage = '/images/5.png';
+      insanityimage = "/images/5.png";
       break;
     default:
-      insanityimage = '/images/1.png';
+      insanityimage = "/images/1.png";
       break;
   }
 
